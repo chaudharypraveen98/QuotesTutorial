@@ -11,7 +11,9 @@ class QuotesScraper(scrapy.Spider):
         item = QuotesItem()
         for quote in response.css(".quote"):
             title = quote.css(".quoteText::text").extract_first()
+            author = quote.css(".authorOrTitle::text").extract_first()
             item["title"] = title
+            item["author"] = author
             # yield {
             #     "title": title
             # }
