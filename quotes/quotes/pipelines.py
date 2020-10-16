@@ -14,7 +14,6 @@ class QuotesPipeline:
         self.create_table()
 
     def process_item(self, item, spider):
-        print("pipeline ", item["title"][0])
         self.db_store(item)
         return item
 
@@ -27,8 +26,8 @@ class QuotesPipeline:
         self.curr.execute("""create table quote_table( title text, author text)""")
 
     def db_store(self, item):
-        self.curr.execute("""insert into quote_table values( ?, ? )""", (
-            item["title"][0],
-            item["author"][0]
+        self.curr.execute("""insert into quote_table values(?,?)""", (
+            item["title"],
+            item["author"]
         ))
         self.conn.commit()
