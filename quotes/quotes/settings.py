@@ -12,9 +12,18 @@ BOT_NAME = 'quotes'
 SPIDER_MODULES = ['quotes.spiders']
 NEWSPIDER_MODULE = 'quotes.spiders'
 
+# PROXY_POOL_ENABLED = True
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'quotes (+http://www.yourdomain.com)'
+DOWNLOADER_MIDDLEWARES = {
+    #The below two lines are for user agents
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'scrapy_user_agents.middlewares.RandomUserAgentMiddleware': 400,
+    # Enable the below line to use proxies
+    # 'scrapy_proxy_pool.middlewares.ProxyPoolMiddleware': 610,
+    # 'scrapy_proxy_pool.middlewares.BanDetectionMiddleware': 620,
+}
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True

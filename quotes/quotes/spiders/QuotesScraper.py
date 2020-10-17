@@ -10,7 +10,7 @@ class QuotesScraper(scrapy.Spider):
 
     def _parse(self, response, **kwargs):
         item = QuotesItem()
-        for quote in response.css(".quote"):
+        for quote in response.css(".quote")[:2]:
             title = quote.css(".quoteText::text").extract_first()
             author = quote.css(".authorOrTitle::text").extract_first()
             item["title"] = title
