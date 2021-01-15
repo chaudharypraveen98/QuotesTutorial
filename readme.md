@@ -6,3 +6,5 @@ Steps to run the projects:-
 2. Install requirements using `pip install -r requirements.txt`
 3. Run the following commands:-
 <br>`scrapy crawl QuotesScraper`
+
+Note : - Any changes are most welcomed. Please install only the version mentioned in the requirements.txt
