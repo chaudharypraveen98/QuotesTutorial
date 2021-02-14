@@ -7,4 +7,8 @@ Steps to run the projects:-
 3. Run the following commands:-
 <br>`scrapy crawl QuotesScraper`
 
+#### **Data Preview**
+<img src='quotes.JPG' alt="quotes ample">
+<br>
+ 
 Note : - Any changes are most welcomed. Please install only the version mentioned in the requirements.txt
